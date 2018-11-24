@@ -6,6 +6,8 @@
 body {
     border-top: 3px solid #158AA3;
     font-family: 'Source Serif Pro', serif;
+    padding-top: 80px;
+    background-color: #f5fbfc;
 }
 
 .page-wrap {
@@ -15,17 +17,23 @@ body {
 }
 
 header {
-    border-bottom: 1px solid #E9E9E9;
+    border-top: 3px solid #158AA3;
+    background-color: #fff;
+    /* border-bottom: 1px solid #E9E9E9; */
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     padding: 10px 5px 0 5px;
-    width: 95%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
 }
 
 .header-logo {
     height: 60px;
     margin-bottom: 10px;
+    margin-left: 15px;
 }
 
 nav ul {
@@ -55,7 +63,6 @@ main {
 }
 
 .hero-image {
-    margin-top: 10px;
     width: 100%;
     background-image: url("images/hero-color.png");
     height: 50%;
@@ -91,25 +98,70 @@ main {
     outline: none;
 } */
 
-.hello-section {
-    margin-top: 10px;
-    border-top: 1px solid #E9E9E9;
+.page-title {
+    /* margin-top: 10px;
+    border-top: 1px solid #E9E9E9; */
     width: 95%;
     text-align: center;
 }
 
-.hello-section h1 {
+.page-title h1 {
     font-family: benton-sans, sans-serif;
     font-style: normal;
     font-weight: 400;
     text-align: center;
 }
 
-.hello-section h2 {
+.page-title h2 {
     font-family: beloved-script, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 80px;
     color: #158AA3;
     margin-top: -70px;
+}
+
+.page-title-reversed h1 {
+    font-family: benton-sans, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+.page-title-reversed h2 {
+    font-family: beloved-script, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    color: #158AA3;
+    margin-bottom: -80px;
+    text-align: center;
+}
+
+#about-section {
+    width: 90%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#about-section img {
+    width: 100%;
+}
+
+#about-section-title {
+    box-sizing: border-box;
+    border: 2px dashed #158AA3;
+    border-left: none;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    text-align: center;
+    width: 95%;
+    margin-top: 10px;
+    border-top: 1px solid #E9E9E9;
+    position: absolute;
+    bottom: 0;
 }
