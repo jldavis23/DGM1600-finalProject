@@ -56,10 +56,10 @@ nav ul li a:hover {
 }
 
 main {
-    width: 100%;
+    /* width: 100%;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: center; */
 }
 
 .hero-image {
@@ -157,18 +157,51 @@ main {
     height: 100%;
 }
 
+#project-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
 .project-card {
-    width: 260px;
+    margin: 30px;
+    width: 255px;
     height: 225px;
-    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(1,1,1,.2);
+    transition: 0.5s;
+}
+
+.project-card:hover {
+    cursor: pointer;
+    background-color: rgba(21, 137, 163, 0.199);
 }
 
 .project-card img {
     width: 100%;
+    border-radius: 3px 3px 0 0;
 }
 
 .project-card figcaption {
-    height: 60px;
+    height: 55px;
+    background-color: transparent;
+    color: #000;
+    border-radius: 0 0 3px 3px;
+    font-family: benton-sans, sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.project-card figcaption span {
+    display: block;
+    font-size: 12px;
+    color: #8b8b8b;
 }
 
 footer {
