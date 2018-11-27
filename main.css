@@ -157,6 +157,20 @@ main {
     height: 100%;
 }
 
+.project-card {
+    width: 260px;
+    height: 225px;
+    border: 1px solid black;
+}
+
+.project-card img {
+    width: 100%;
+}
+
+.project-card figcaption {
+    height: 60px;
+}
+
 footer {
     text-align: center;
     width: 95%;
