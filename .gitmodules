@@ -1,0 +1,3 @@
+[submodule "/cards-project"]
+    path = /cards-project
+    url = git:https://github.com/jldavis23/DGM1600-finalProject
