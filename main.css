@@ -9,7 +9,7 @@
 body {
     border-top: 3px solid #158AA3;
     padding-top: 80px;
-    background-color: #F2EDE7;
+    background-color: #fff;
     font-family: benton-sans, sans-serif;
 }
 
@@ -82,14 +82,16 @@ nav ul li a:hover {
 /* PROJECTS ------------------------------------- */
 
 #projects {
-    margin: 20px 0;
+    padding: 20px;
     width: 100%;
+    background-color: #F2EDE7;
 }
 
 h1#projects-title {
     text-align: center;
     font-weight: 400;
     font-size: 35px;
+    color: #158AA3;
 }
 
 .projects-wrapper {
@@ -138,6 +140,10 @@ h1#projects-title {
     color: #8b8b8b;
 }
 
+.card-front figcaption #new {
+    color: #158AA3;
+}
+
 .card-back {
     width: 255px;
     height: 170px;
@@ -172,12 +178,51 @@ h1#projects-title {
     opacity: 0.5;
 }
 
+/* ABOUT ME ------------------------------------- */
+#about-me {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px;
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#about-me #about-me-text {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#about-me-text h1 {
+    color: #158AA3;
+    font-size: 25px;
+}
+
+#about-me-text p {
+    margin: 8px 0;
+}
+
+#about-me-text h2 {
+    color: #158AA3;
+    font-size: 18px;
+} 
+
+#contact-icons a {
+    color: #000;
+    margin: 5px;
+    
+}
+
+#contact-icons i {
+    font-size: 18px;
+}
+
 /* FOOTER ------------------------------------- */
 
 footer {
     text-align: center;
     width: 100%;
-    margin-top: 10px;
     background-color: rgb(189, 189, 189);
     padding: 10px;
     color: #fff;
