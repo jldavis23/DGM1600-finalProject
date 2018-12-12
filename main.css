@@ -82,9 +82,9 @@ nav ul li a:hover {
 /* PROJECTS ------------------------------------- */
 
 #projects {
-    padding: 20px;
+    padding: 50px;
     width: 100%;
-    background-color: #F2EDE7;
+    background-color: #ebebeb;
 }
 
 h1#projects-title {
@@ -94,10 +94,39 @@ h1#projects-title {
     color: #158AA3;
 }
 
+@media only screen and (max-width: 1300px) {
+    #projects h2 {
+        width: 190px;
+        padding: 10px;
+        margin: 10px 0 -10px 0;
+        background-color: #e0e0e0;
+        color: #158AA3;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid #cccccc;
+    } 
+}
+
+@media only screen and (min-width: 1301px) {
+    #projects h2 {
+        max-width: 1300px;
+        padding: 10px;
+        margin: 10px auto -11px auto;
+        background-color: #e0e0e0;
+        color: #158AA3;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid #cccccc;
+    }
+}
+
 .projects-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 10px auto;
+    max-width: 1300px;
+    background-color: #e0e0e0;
+    border: 1px solid #cccccc;
+    padding: 20px;
 }
 
 .project-card {
