@@ -8,4 +8,4 @@
 
 [submodule "swapi-planets"]
     path = swapi-planets
-    url = git:https://github.com/jldavis23/DGM1600-starshipShopping
+    url = file:///C:/git/repository
