@@ -13,16 +13,10 @@ body {
     font-family: benton-sans, sans-serif;
 }
 
-.page-wrap {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
+/* HEADER AND NAVIGATION ----------------------------- */
 header {
     border-top: 3px solid #158AA3;
     background-color: #fff;
-    /* border-bottom: 1px solid #E9E9E9; */
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -59,21 +53,14 @@ nav ul li a:hover {
     color: #000;
 }
 
-/* HOME PAGE ------------------------------------- */
-
-#home-page-main {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
+/* HERO IMAGE ----------------------------- */
 
 .hero-image {
     background-image: url(images/hero-image.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 90vh;
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -92,81 +79,30 @@ nav ul li a:hover {
     color: #fff;
 }
 
-.page-title {
-    /* margin-top: 10px;
-    border-top: 1px solid #E9E9E9; */
-    width: 95%;
-    text-align: center;
-}
+/* PROJECTS ------------------------------------- */
 
-.page-title h1 {
-    font-family: benton-sans, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-}
-
-.page-title h2 {
-    font-family: beloved-script, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 80px;
-    color: #158AA3;
-    margin-top: -70px;
-}
-
-/* ABOUT PAGE ------------------------------------- */
-
-.page-title-reversed h1 {
-    font-family: benton-sans, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    text-align: center;
-}
-
-.page-title-reversed h2 {
-    font-family: beloved-script, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 80px;
-    color: #fff;
-    margin-bottom: -80px;
-    text-align: center;
-}
-
-#about-section {
-    width: 90%;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-#about-section img {
+#projects {
+    margin: 20px 0;
     width: 100%;
 }
 
-#about-section-title {
-    border: 2px dashed #158AA3;
-    border-left: none;
-    width: 100%;
-    height: 100%;
+h1#projects-title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 35px;
 }
 
-/* PROJECT PAGE ------------------------------------- */
-
-#project-card-wrapper {
+.projects-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
-    max-width: 1200;
 }
 
 .project-card {
     position: relative;
     text-decoration: none;
     margin: 20px;
-    float: left;
+    
 }
 
 .card-face {
@@ -236,11 +172,14 @@ nav ul li a:hover {
     opacity: 0.5;
 }
 
-/* ALL PAGES ------------------------------------- */
+/* FOOTER ------------------------------------- */
 
 footer {
     text-align: center;
-    width: 95%;
+    width: 100%;
     margin-top: 10px;
-    border-top: 1px solid #E9E9E9;
+    background-color: rgb(189, 189, 189);
+    padding: 10px;
+    color: #fff;
+    font-weight: 600;
 }
