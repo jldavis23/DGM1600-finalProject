@@ -14,44 +14,101 @@ body {
 }
 
 /* HEADER AND NAVIGATION ----------------------------- */
-header {
-    border-top: 3px solid #158AA3;
-    background-color: #fff;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 10px 5px 0 5px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
-    z-index: 2;
+
+/* phone */
+@media only screen and (max-width: 600px) {
+    header {
+        border-top: 3px solid #158AA3;
+        background-color: #fff;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        /* justify-content: space-between; */
+        padding: 10px 5px 0 5px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+        z-index: 2;
+    }
+    
+    .header-logo {
+        height: 60px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
+
+    nav {
+        width: 100%;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 10px;
+        background-color: #158AA3;
+        border-radius: 5px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-family: benton-sans, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
 }
 
-.header-logo {
-    height: 60px;
-    margin-bottom: 10px;
-    margin-left: 15px;
+/* desktop */
+@media only screen and (min-width: 601px) {
+    header {
+        border-top: 3px solid #158AA3;
+        background-color: #fff;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 10px 5px 0 5px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+        z-index: 2;
+    }
+    
+    .header-logo {
+        height: 60px;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    nav ul li a {
+        margin-right: 15px;
+        text-decoration: none;
+        color: #AAA;
+        font-family: benton-sans, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    nav ul li a:hover {
+        border-bottom: 3px solid #158AA3;
+        color: #000;
+    }
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
 
-nav ul li a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: #AAA;
-    font-family: benton-sans, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-}
-
-nav ul li a:hover {
-    border-bottom: 3px solid #158AA3;
-    color: #000;
-}
 
 /* HERO IMAGE ----------------------------- */
 
@@ -219,13 +276,31 @@ h1#projects-title {
 }
 
 /* ABOUT ME ------------------------------------- */
-#about-me {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 15px;
-    width: 80%;
-    padding: 20px;
-    margin: 0 auto;
+
+@media only screen and (max-width: 800px) {
+    #about-me {
+        display: grid;
+        /* grid-template-columns: 2fr 2fr; */
+        grid-gap: 15px;
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    #about-me {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-gap: 15px;
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+}
+
+#about-me img {
+    width: 100%;
 }
 
 #about-me #about-me-text {
