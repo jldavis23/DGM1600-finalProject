@@ -1,11 +1,11 @@
 [submodule "cards-project"]
     path = cards-project
-    url = git://github.com/jldavis23/DGM1600-finalProject
+    url = git://github.com/jldavis23/DGM1600-cardsProject
 
 [submodule "starship-shopping"]
     path = starship-shopping
-    url = git://github.com/jldavis23/DGM1600-finalProject
+    url = git://github.com/jldavis23/DGM1600-starshipShopping
 
 [submodule "swapi-planets"]
     path = swapi-planets
-    url = git://github.com/jldavis23/DGM1600-finalProject
+    url = git:https://github.com/jldavis23/DGM1600-starshipShopping
