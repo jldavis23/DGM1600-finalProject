@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 10px;
+    background-color: #222;
+    font-family: 'Playfair Display SC', serif;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/* HEADER */
+
+h1 {
+    margin: 10px;
+    border-bottom: 1px solid rgb(199, 201, 204, 0.3);
+    width: 90%;
+    text-align: center;
+}
+
+#hogwarts-img {
+    width: 5%;
+}
+
+p {
+    font-family: 'Adamina', serif;
+}
+
+/* FILTER BUTTONS */
+
+#button-container {
+    border-bottom: 1px solid rgb(199, 201, 204, 0.3);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0px 3px 0px rgb(112, 110, 110);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.current-button {
+    background-color: #aaa;
+}
+
+/* CARDS */
+
+#card-container {
+    text-align: center;
+}
+
+.scene {
+    perspective: 600px;
+    width: 200px;
+    height: 350px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.4);
+    padding: 8px;
+}
+
+.front {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+img {
+    width: 100%;
+}
+
+figcaption {
+    color: #fff;
+    font-weight: 600;
+}
+
+.back {
+    transform: rotateY(180deg);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.back-name-heading {
+    color: #fff
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    border-bottom: 1px solid rgb(199, 201, 204, 0.3);
+    padding: 3px;
+}
+
+li {
+    color: #fff;
+    font-family: 'Adamina', serif;
+    font-size: 14px;
+}
+
+.Gryffindor {
+    background-color: #d84e3f;
+}
+
+.Slytherin {
+    background-color: #005d4b;
+}
+
+.Ravenclaw {
+    background-color: #22326a;
+}
+
+.Hufflepuff {
+    background-color: #fcb82d;
+}
+
+.sort-heading {
+    background-color: #000;
+}
+
+/* ADD A CARD SECTION */
+
+#create-card-button {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.hide {
+    display:none;
+}

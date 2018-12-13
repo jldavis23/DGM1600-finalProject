@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="potter.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+    <title>Harry Potter Cards</title>
+</head>
+<body>
+    <img id="hogwarts-img" src="https://vignette.wikia.nocookie.net/jspotter/images/1/18/Hogwarts_Crest_1.png/revision/latest?cb=20140720035204">
+    <h1>Potter Cards</h1>
+    <p>Welcome to Potter Cards! Click on a character to view their information.</p>
+    <p>When the characters are unsorted, you can add cards by clicking the button at the bottom of the screen.</p>
+
+    <h3>Sort By:</h3>
+    <div id="button-container">
+        <button id="none-button">None</button>
+        <button id="house-button">Hogwarts House</button>
+        <button id="students-staff-button">Students & Staff</button>
+        <button id="blood-status-button">Blood Status</button>
+    </div>
+    
+    <div id="card-container">
+        <!-- cards added with javascript -->
+    </div>
+
+    <button id="create-card-button">Create New Card + </button>
+
+    <script type="module" src="potter.js"></script>
+</body>
+</html>
