@@ -1,4 +1,7 @@
+//* Use of Import and Export statements
+//* Using Arrays to store and manipulate collections of data
 export const planets = [
+    //* Use of Objects with key-value pairs
     {
         "name": "Alderaan",
         "rotation_period": "24",

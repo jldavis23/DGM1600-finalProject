@@ -1,4 +1,7 @@
+//* Use of Import and Export statements
+//* Using Arrays to store and manipulate collections of data
 export const characters = [
+    //* Use of Objects with key-value pairs
     {
         "name":"Harry Potter",
         "species":"human",

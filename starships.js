@@ -1,11 +1,14 @@
+//* Use of Import and Export statements
 import { starships } from './assets/starshipData.js'
 
+//* Proper use of variables with proper scope (global)
+//* Proper use of let and const variables 
 let shipsWithCredits = starships.filter(starship => starship.cost_in_credits !== "unknown")
 let starshipListingsContainer = document.querySelector('#starship-listings-container')
 let propertiesOrder = ['model', 'manufacturer', 'length', 'max_atmosphering_speed', 'crew', 'passengers', 'cargo_capacity', 'consumables', 'hyperdrive_rating', 'MGLT', 'starship_class']
 let currentArray = shipsWithCredits.slice(0)
 
-//Puts commas in a number (I adapted this function from another source)
+//Puts commas in a number (source: https://stackoverflow.com/a/2901298)
 let numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -19,22 +22,25 @@ creditDisplay.textContent = `Credits: ${numberWithCommas(credits)}`
 // MAIN FUNCTIONS -------------------------------------------------------------
 
 // Gives each starship an id (used for adding images)
-shipsWithCredits.forEach(starship => {
+//* Use of Arrow functions (there are 39 in this project)
+//* Iteration through an Array using loops and Array methods (.map)
+shipsWithCredits.map(starship => {
     if (starship.url[32] === "/") {
         starship.id = starship.url[31]
     } else {
+        //* Use of Strings using Template Literals (there are 15 more below)
         starship.id = `${starship.url[31]}${starship.url[32]}`
     }
 })
 
-let removeListings = () => {
+const removeListings = () => {
     let removeDiv = document.querySelector("#starship-listings-container");
     while (removeDiv.firstChild) {
         removeDiv.removeChild(removeDiv.firstChild);
     }
 }
 
-let createListing = (starship) => {
+const createListing = (starship) => {
     let starshipListing = document.createElement('div')
     starshipListing.classList.add("starship-listing")
     if (starship.usercreated === true) {
@@ -55,6 +61,7 @@ let createListing = (starship) => {
     fig.appendChild(cap)
 
     let name = document.createElement('h1')
+    //* Objects with properties and methods accessed using dot notation
     name.textContent = starship.name
     cap.appendChild(name)
 
@@ -76,6 +83,7 @@ let createListing = (starship) => {
         ul.appendChild(propKey)
 
         let propValue = document.createElement('li')
+        //* Good use of conditional logic and value comparison
         if (property === "length") {
             propValue.textContent = `${numberWithCommas(starship[property])} meters`
         } else if (property === "max_atmosphering_speed") {
@@ -95,6 +103,7 @@ let createListing = (starship) => {
     back.appendChild(button)
 
     button.addEventListener('click', () => {
+        //* Good use of conditional logic and value comparison
         if (credits > starship.cost_in_credits) {
             alert("Congrats! You bought a starship!")
             credits = credits - parseInt(starship.cost_in_credits)
@@ -105,6 +114,7 @@ let createListing = (starship) => {
     })
 }
 
+//* Iteration through an Array using loops and Array methods (.forEach)
 shipsWithCredits.forEach(starship => {createListing(starship)})
 
 
@@ -112,6 +122,8 @@ shipsWithCredits.forEach(starship => {createListing(starship)})
 // TOP PICKS -------------------------------------------------------------
 
 //Reducing
+//* Iteration through an Array using loops and Array methods (.reduce)
+//* Objects with properties and methods accessed using dot notation
 let mostCargoCapacity = shipsWithCredits.filter(starship => starship.cargo_capacity !== "unknown").reduce((mostCargo, starship) => {
     return (parseInt(mostCargo.cargo_capacity) || 0) > parseInt(starship.cargo_capacity) ? mostCargo : starship
 }, {})
@@ -121,12 +133,15 @@ let fastestStarship = shipsWithCredits.filter(starship => starship.max_atmospher
     fastest : starship
 }, {})
 
+//* Good use of Arrays
+//* Using Arrays to store and manipulate collections of data
 let topPicksList = [[mostCargoCapacity, 'cargo_capacity', 'Most Cargo Capacity', 'metric tons'], [fastestStarship, 'max_atmosphering_speed', 'Fastest in Atmosphere', 'kph'], [shipsWithCredits[3], 'model', 'Most Popular']]
 let topPicksContainer = document.querySelector('#top-picks-container')
 
 
 //Creates the top picks cards
 const createTopPicks = (starship, property, str, unit) => {
+    //* Proper use of variables with proper scope (local)
     let fig = document.createElement('figure')
     topPicksContainer.appendChild(fig)
 
@@ -212,6 +227,7 @@ sortSpeed.addEventListener("click", sortBySpeed)
 
 // FILTERING -------------------------------------------------------------
 
+//* Proper use of let and const variables 
 const filters = ["manufacturer", "hyperdrive_rating", "starship_class"]
 let filtersContainer = document.querySelector('#filters-container')
 
@@ -221,6 +237,7 @@ noFilterButton.classList.add('active')
 let filterButtonList = ['no-filter']
 
 const filterShips = (filter, str) => {
+    //* Iteration through an Array using loops and Array methods (.filter)
     currentArray = shipsWithCredits.filter(starship => starship[filter].includes(str) === true)
     removeListings()
     sortNone.checked = 'checked'
@@ -237,7 +254,7 @@ const filterShips = (filter, str) => {
 }
 
 //Creates the filter buttons
-let createFilterButtons = () => {
+const createFilterButtons = () => {
     filters.forEach(filter => {
         let div = document.createElement('div')
         filtersContainer.appendChild(div)
@@ -262,11 +279,13 @@ let createFilterButtons = () => {
     
             button.addEventListener('click', function() {filterShips(filter, str)} )
         }
-    
+        
+        //* Good use of Arrays
         let usedFilters = []
     
         shipsWithCredits.forEach(starship => {
             if (starship[filter].includes(',') === true) {
+                //* Proper use of String manipulation
                 let first = starship[filter].slice(0, starship[filter].indexOf(','))
                 let second = starship[filter].slice(starship[filter].indexOf(',') + 2)
     
@@ -324,6 +343,7 @@ shipsWithCredits.forEach(starship => {
 })
 
 //Starship constructor
+//* Objects using Constructors properly
 class Starship {
     constructor(name, model, credits, id, manufacturer, length, max_atmosphering_speed, crew, passengers, cargo_capacity, consumables, hyperdrive_rating, MGLT, starship_class) {
         this.name = name
@@ -353,6 +373,8 @@ submitButton.addEventListener('click', () => {
     if (sellName.value === "" || sellCost === "") {
         alert('Please fill out all the fields')
     } else {
+        //* Use of custom JavaScript objects
+        //* Proper declarations of Objects
         let userStarship = new Starship(sellName.value, sellModel.value, sellCost.value, modelStarship.id, modelStarship.manufacturer, modelStarship['length'], modelStarship.max_atmosphering_speed, modelStarship.crew, modelStarship.passengers, modelStarship.cargo_capacity, modelStarship.consumables, modelStarship.hyperdrive_rating, modelStarship.MGLT, modelStarship.starship_class)
         sellName.value = ""
         sellCost.value = ""

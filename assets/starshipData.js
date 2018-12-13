@@ -1,4 +1,7 @@
+//* Use of Import and Export statements
+//* Using Arrays to store and manipulate collections of data
 export const starships = [
+    //* Use of Objects with key-value pairs
     {
         "name": "Executor",
         "model": "Executor-class star dreadnought",
