@@ -106,7 +106,7 @@ const createListing = (starship) => {
         //* Good use of conditional logic and value comparison
         if (credits > starship.cost_in_credits) {
             alert("Congrats! You bought a starship!")
-            credits = credits - parseInt(starship.cost_in_credits)
+            credits = credits - parseFloat(starship.cost_in_credits)
             creditDisplay.textContent = `Credits: ${numberWithCommas(credits)}`
         } else {
             alert("Sorry, you do not have enough credits to purhcase this item")
@@ -390,7 +390,7 @@ submitButton.addEventListener('click', () => {
         }
         createFilterButtons()
         sortingReset()
-        credits = credits + parseInt(userStarship.cost_in_credits)
+        credits = credits + parseFloat(userStarship.cost_in_credits)
         creditDisplay.textContent = `Credits: ${numberWithCommas(credits)}`
     }
 })
